@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
+
+.hero{
+    margin-top: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text{
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    left: 20%;
+    font-size: 40px;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 400;
+    
+}
+
+.hero-text h2, h3{
+    background-image: linear-gradient(to right, #050505, #e7e7e7, #fefefe, #fdfdfd, #fdfdfd, #fcfcfc, #fbfbfb);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;   
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-img{
+    margin-left: 25%;
+    position: relative;
+    z-index: -2;
+}
