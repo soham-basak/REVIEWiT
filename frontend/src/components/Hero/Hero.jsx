@@ -14,6 +14,9 @@ const Hero = () => {
           <img src={heroImg} alt="" />
         </div>
       </div>
+      <div className="hero-divider">
+        <h1 className="fancy">MOVIES</h1>
+      </div>
     </>
   );
 };
