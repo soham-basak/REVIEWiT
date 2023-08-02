@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+.footer-content{
+    display: flex;
+    margin-top: 100px;
+    margin-left: 370px;
+    margin-right: 370px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+}
+
+.footer-content .heading{
+    color: #fff;
+    font-size: 2.1rem;
+    font-weight: 600;
+    padding-top: 10px;
+    text-transform: capitalize;
+    line-height: 3rem;
+    font-family: 'Borel', cursive;
+}
+
+.footer-content p{
+    padding: 0px 20px; 
+    max-width: 900px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 16px;
+    color: #cacdd2;
+    font-family: 'Borel', cursive;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0px 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+    border-radius: 50%;
+}
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color: aqua;
+}
+.footer-bottom{
+    background: #000;
+    max-width: 1100px;
+    margin-left: 370px;
+    margin-right: 370px;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.footer-bottom p{
+    float: left;
+    font-size: 18px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+ }
+ .footer-bottom p a{
+   color:#44bae8;
+   font-size: 20px;
+   text-decoration: none;
+ }
+ .footer-bottom span{
+     text-transform: uppercase;
+     opacity: .4;
+     font-weight: 200;
+ }

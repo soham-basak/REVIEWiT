@@ -18,7 +18,7 @@
     
 }
 
-.hero-text h2, h3{
+.hero-text h2, .hero-text h3{
     background-image: linear-gradient(to right, #050505, #e7e7e7, #fefefe, #fdfdfd, #fdfdfd, #fcfcfc, #fbfbfb);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;   
