@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import profilePic from "../../img/profile.png";
 
@@ -6,14 +7,35 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <h2>REVIEWiT</h2>
+        <Link className="link" to="/">
+          <h2>REVIEWiT</h2>
+        </Link>
+
         <ul className="nav-menu">
-          <li className="nav-item">HOME</li>
-          <li className="nav-item">ABOUT</li>
-          <li className="nav-item">LOGIN</li>
-          <li className="nav-item">REGISTER</li>
+          <li className="nav-item">
+            <Link className="link" to="/">
+              HOME
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="link" to="/about">
+              ABOUT
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="link" to="/login">
+              LOGIN
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="link" to="/register">
+              REGISTER
+            </Link>
+          </li>
           <li className="nav-img">
-            <img src={profilePic} />
+            <Link to="/profile">
+              <img src={profilePic} />
+            </Link>
           </li>
         </ul>
       </div>

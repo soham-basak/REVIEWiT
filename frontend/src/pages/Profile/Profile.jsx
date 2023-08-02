@@ -1,63 +1,53 @@
 import React from "react";
-import "./Register.css";
-import registerImg from "../../img/register-img.jpg";
+import "./Profile.css";
+import profileUpdaterImg from "../../img/update-profile.jpg";
 import Footer from "../../components/Footer/Footer";
-import loginHeroImg from "../../img/login-page-banner.jpg";
 
-const Register = () => {
+const Profile = () => {
   return (
     <>
-      <div className="register-hero">
-        <div className="register-hero-img">
-          <img src={loginHeroImg} alt="" />
-        </div>
-        <div className="register-hero-text">
-          <h2>Lights</h2> <h2> Camera. Register. </h2>
-          <h3>Join the world of movies!</h3>
-        </div>
-      </div>
-      <div className="register-form-container">
-        <div className="register-picture">
-          <img src={registerImg} alt="register-img" />
+      <div className="profile-form-container">
+        <div className="profile-picture">
+          <img src={profileUpdaterImg} alt="profile-img" />
         </div>
         <div className="container">
           <div className="screen">
             <div className="screen__content">
-              <form className="register">
-                <div className="register__field">
-                  <i className="register__icon fa fa-user"></i>
+              <form className="profile">
+                <div className="profile__field">
+                  <i className="profile__icon fa fa-user"></i>
                   <input
                     type="text"
-                    className="register__input"
+                    className="profile__input"
                     placeholder="Name"
                   />
                 </div>
-                <div className="register__field">
-                  <i className="register__icon fa fa-envelope"></i>
+                <div className="profile__field">
+                  <i className="profile__icon fa fa-envelope"></i>
                   <input
                     type="email"
-                    className="register__input"
+                    className="profile__input"
                     placeholder="Email"
                   />
                 </div>
-                <div className="register__field">
-                  <i className="register__icon fa fa-lock"></i>
+                <div className="profile__field">
+                  <i className="profile__icon fa fa-lock"></i>
                   <input
                     type="password"
-                    className="register__input"
+                    className="profile__input"
                     placeholder="Password"
                   />
                 </div>
-                <div className="register__field">
-                  <i className="register__icon fa fa-lock"></i>
+                <div className="profile__field">
+                  <i className="profile__icon fa fa-lock"></i>
                   <input
                     type="password"
-                    className="register__input"
+                    className="profile__input"
                     placeholder="Confirm Password"
                   />
                 </div>
-                <button className="button register__submit">
-                  <span className="button__text">Register</span>
+                <button className="button profile__submit">
+                  <span className="button__text">Update Profile</span>
                   <i className="button__icon fa fa-chevron-right"></i>
                 </button>
               </form>
@@ -76,4 +66,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Profile;

@@ -1,68 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
-
-.login-hero{
-    margin-top: 130px;
-    display: flex;
-    align-items: center;
-}
-
-.login-hero-text{
-    position: absolute;
-    z-index: 1;
-    align-items: center;
-    justify-content: center;
-    left: 50%;
-    font-size: 40px;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 400;
-    
-}
-
-.login-hero-text h2, .login-hero-text h3{
-	background-image: linear-gradient(to right, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc, #c5c5c5, #aeaeae, #989898, #707070, #4a4a4a, #272727, #000000);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;   
-    background-clip: text;
-    color: transparent;
-}
-
-.login-hero-img{
-    margin-left: 20.5%;
-    position: relative;
-    z-index: -2;
-}
 
 
-.login-form-container{
+.profile-form-container{
     display: flex;
     align-items: center;
 	justify-content: center;
     gap: 290px;
+	margin-top: 150px;
     margin-right: 100px;
-	margin-top: 100px;
-	margin-bottom: 100px;
 	height: 600px;
 }
 
-
-.login-picture{
+.profile-picture{
     position: relative;	
+    padding-bottom: 38px;
     height: 600px;
 	width: 360px;
 }
 
-.login-picture img{
-    height: 600px;
-	width: 560px;
+.profile-picture img{
+    height: 700px;
+	width: 600px;
 }
-	
 
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 600px;
+	min-height: 100vh;
+    
 }
 
 .screen {		
@@ -130,24 +96,24 @@
 	border-radius: 60px;
 }
 
-.login {
+.profile {
 	width: 320px;
 	padding: 30px;
 	padding-top: 156px;
 }
 
-.login__field {
+.profile__field {
 	padding: 20px 0px;	
 	position: relative;	
 }
 
-.login__icon {
+.profile__icon {
 	position: absolute;
 	top: 30px;
 	
 }
 
-.login__input {
+.profile__input {
 	border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
@@ -158,14 +124,14 @@
 	transition: .2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.profile__input:active,
+.profile__input:focus,
+.profile__input:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
 }
 
-.login__submit {
+.profile__submit {
 	background: #fff;
 	font-size: 14px;
 	margin-top: 30px;
@@ -183,9 +149,9 @@
 	transition: .2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
+.profile__submit:active,
+.profile__submit:focus,
+.profile__submit:hover {
 	border-color: #6A679E;
 	outline: none;
 }
@@ -196,7 +162,7 @@
 	color: #7875B5;
 }
 
-.social-login {	
+.social-profile {	
 	position: absolute;
 	height: 140px;
 	width: 160px;
@@ -212,14 +178,14 @@
 	justify-content: center;
 }
 
-.social-login__icon {
+.social-profile__icon {
 	padding: 20px 10px;
 	color: #fff;
 	text-decoration: none;	
 	text-shadow: 0px 0px 8px #7875B5;
 }
 
-.social-login__icon:hover {
+.social-profile__icon:hover {
 	transform: scale(1.5);	
 }
 
