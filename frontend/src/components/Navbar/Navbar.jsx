@@ -34,7 +34,7 @@ const Navbar = () => {
           </li>
           <li className="nav-img">
             <Link to="/profile">
-              <img src={profilePic} />
+              <img src={profilePic} alt="" />
             </Link>
           </li>
         </ul>
