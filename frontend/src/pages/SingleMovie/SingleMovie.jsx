@@ -1,8 +1,15 @@
 import React from "react";
+import { useState } from "react";
 import "./SingleMovie.css";
 import Reviews from "../../components/Reviews/Reviews";
+import Footer from "../../components/Footer/Footer";
+import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 const SingleMovie = () => {
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = (event) => {
+    setIsShown((current) => !current);
+  };
   return (
     <>
       <div className="single-movie-card">
@@ -20,7 +27,7 @@ const SingleMovie = () => {
             </p>
 
             <div class="control">
-              <button class="btn">
+              <button class="btn" onClick={handleClick}>
                 <span class="price">
                   <i class="fa fa-film"></i>
                 </span>
@@ -40,7 +47,9 @@ const SingleMovie = () => {
           </div>
         </div>
       </div>
+      {isShown && <ReviewForm />}
       <Reviews />
+      <Footer />
     </>
   );
 };
