@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Avengers Assemble",
+    "description": "The Earth's mightiest heroes, including Iron Man, Captain America, Thor, Hulk, Black Widow, and Hawkeye, unite to defend the world from an extraterrestrial threat.",
+    "rating": 8.7,
+    "image_url": "https://flxt.tmsimg.com/assets/p9548653_b_v9_af.jpg"
+  },
+  {
+    "name": "Avengers: Age of Ultron",
+    "description": "The Avengers face an advanced AI called Ultron, created by Tony Stark, that turns against humanity and seeks to bring about global extinction.",
+    "rating": 8.5,
+    "image_url": "https://lumiere-a.akamaihd.net/v1/images/p_avengersageofultron_19907_c62cd1c0.jpeg"
+  },
+  {
+    "name": "Avengers: Infinity War",
+    "description": "The Avengers, along with the Guardians of the Galaxy and other allies, battle the mad titan Thanos, who seeks to gather all six Infinity Stones and wipe out half of all life in the universe.",
+    "rating": 9.2,
+    "image_url": "https://m.media-amazon.com/images/I/81GfZasnt9L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "name": "Avengers: Endgame",
+    "description": "The epic conclusion to the Avengers saga as the heroes assemble one last time to undo the damage caused by Thanos and save the universe.",
+    "rating": 9.5,
+    "image_url": "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0%2C0%2C540%2C810"
+  },
+  {
+    "name": "Avengers: Secret Wars",
+    "description": "The Avengers must confront an interdimensional threat that threatens to merge different realities and alter the course of history.",
+    "rating": 8.8,
+    "image_url": "https://pbs.twimg.com/media/FY-BpW9XwAIXIui.jpg:large"
+  },
+  {
+    "name": "Avengers: Dark Reign",
+    "description": "After the defeat of Norman Osborn, a new threat emerges, and the Avengers must deal with political intrigue and unexpected betrayals.",
+    "rating": 8.4,
+    "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/b/f0/5773ea4e0b0dc/clean.jpg"
+  },
+  {
+    "name": "Avengers: Annihilation",
+    "description": "The Avengers face an ancient cosmic threat that seeks to destroy all life in the universe, leading to a battle of epic proportions.",
+    "rating": 9.0,
+    "image_url": "https://static.wikia.nocookie.net/jacks-custom-mcu/images/7/7e/Temp_2.jpg/revision/latest?cb=20190716003829"
+  },
+  {
+    "name": "Avengers: Reassembled",
+    "description": "The Avengers must come together once again when a long-forgotten enemy returns to seek revenge and dismantle the team from within.",
+    "rating": 8.6,
+    "image_url": "https://m.media-amazon.com/images/M/MV5BMTY4MGY2ZmEtZTFjYS00YmNhLWFhYzAtNDljODc2Y2UzYWYyXkEyXkFqcGdeQXVyNjgzODgzNjA@._V1_.jpg"
+  },
+  {
+    "name": "Avengers: Legacy",
+    "description": "A new generation of heroes takes up the mantle of the Avengers, facing both old and new threats to protect the world.",
+    "rating": 8.3,
+    "image_url": "https://m.media-amazon.com/images/M/MV5BNDViOTMyZWUtYTEwZi00ZWFjLTgyYjctMzU0MWM0NTAyMzY2XkEyXkFqcGdeQXVyNjgzODgzNjA@._V1_.jpg"
+  },
+  {
+    "name": "Avengers: War of the Realms",
+    "description": "The Avengers join forces with Asgardians and other allies to defend Earth against an otherworldly invasion led by Malekith the Accursed.",
+    "rating": 8.9,
+    "image_url": "https://cdn.marvel.com/u/prod/marvel/i/mg/c/10/5cd470cabf760/clean.jpg"
+  },
+  {
+    "name": "Avengers: Secret Invasion",
+    "description": "The Avengers must uncover and confront the shape-shifting Skrulls, who have infiltrated the ranks of Earth's heroes, leading to a battle for trust and survival.",
+    "rating": 9.1,
+    "image_url": "https://static.wikia.nocookie.net/marveldatabase/images/d/d6/Secret_Invasion_Vol_1_1.jpg/revision/latest?cb=20181116200343"
+  },
+  {
+    "name": "Avengers: Final Stand",
+    "description": "In the ultimate showdown, the Avengers face a cosmic entity that poses a threat to the entire multiverse, requiring them to unite with heroes from across different realities.",
+    "rating": 9.3,
+    "image_url": "https://assets.mycast.io/posters/avengers-last-stand-fan-casting-poster-173848-medium.jpg?1646016202"
+  }
+]
