@@ -10,7 +10,7 @@ const getMovies = asyncHandler(async (req, res) => {
   res.status(200).json(movies);
 });
 
-// @desc    Get one movies
+// @desc    Get one movie
 // route GET /api/movies/:id
 // access public
 
