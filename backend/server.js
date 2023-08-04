@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import movieRoutes from "./routes/movieRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/movies", movieRoutes);
 app.use("/api/movies/review", reviewRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
