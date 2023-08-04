@@ -30,9 +30,8 @@ const createReview = asyncHandler(async (req, res) => {
     await movie.save();
     res.status(201).json(newReview);
   } catch (error) {
-    res.status(500).json({
-      message: "Server error",
-    });
+    req.status(404);
+    throw new Error("Server error : " + error.message);
   }
 });
 
@@ -53,9 +52,8 @@ const getReview = asyncHandler(async (req, res) => {
 
     res.status(200).json(movie.reviews);
   } catch (error) {
-    res.status(500).json({
-      message: "Server error",
-    });
+    req.status(404);
+    throw new Error("Server error : " + error.message);
   }
 });
 

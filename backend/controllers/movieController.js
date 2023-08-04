@@ -6,8 +6,13 @@ import Movie from "../models/movieModel.js";
 // access public
 
 const getMovies = asyncHandler(async (req, res) => {
-  const movies = await Movie.find();
-  res.status(200).json(movies);
+  try {
+    const movies = await Movie.find();
+    res.status(200).json(movies);
+  } catch (error) {
+    req.status(404);
+    throw new Error("Server error : " + error.message);
+  }
 });
 
 // @desc    Get one movie
@@ -15,8 +20,13 @@ const getMovies = asyncHandler(async (req, res) => {
 // access public
 
 const getOneMovie = asyncHandler(async (req, res) => {
-  const movie = await Movie.findById(req.params.id).populate("reviews");
-  res.status(200).json(movie);
+  try {
+    const movie = await Movie.findById(req.params.id).populate("reviews");
+    res.status(200).json(movie);
+  } catch (error) {
+    req.status(404);
+    throw new Error("Server error : " + error.message);
+  }
 });
 
 export { getMovies, getOneMovie };
