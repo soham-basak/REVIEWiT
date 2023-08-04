@@ -33,8 +33,12 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
     });
   } else {
+<<<<<<< HEAD
     res.status(400);
     throw new Error("Invalid user data");
+=======
+    res.status(400).json({ message: "Ivalid User Data" });
+>>>>>>> 368fba6ed5bf5c6ec49788745135a177d169a9f6
   }
 });
 
@@ -55,9 +59,13 @@ const loginUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
     });
+<<<<<<< HEAD
   } else {
     throw new Error("Invalid user data");
   }
+=======
+  } else [res.status(400).json({ message: "Invalid Credentials" })];
+>>>>>>> 368fba6ed5bf5c6ec49788745135a177d169a9f6
 });
 
 // @desc Logout User
@@ -86,6 +94,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
   res.status(200).json(user);
 });
 
+<<<<<<< HEAD
 // @desc Get user profile
 // route PUT /api/users/profile
 // @access private
@@ -119,3 +128,6 @@ export {
   getUserProfile,
   updateUserProfile,
 };
+=======
+export { registerUser, loginUser, logOutUser };
+>>>>>>> 368fba6ed5bf5c6ec49788745135a177d169a9f6
