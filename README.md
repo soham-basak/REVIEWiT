@@ -12,7 +12,9 @@ REVIEWiT is a web application built using the MERN (MongoDB, Express.js, React.j
 ## Screenshots
 
 ![Screenshot 1](banners/banner1.png)
+
 ![Screenshot 2](banners/banner2.png)
+
 ![Screenshot 3](banners/banner3.png)
 
 ## Getting Started
