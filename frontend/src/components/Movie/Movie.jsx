@@ -20,7 +20,7 @@ const Movie = ({ movie }) => {
               <p className="card__description">{movie.description}</p>
             </div>
             <button className="card__button">
-              <Link className="link" to="/movie">
+              <Link className="link" to={`/movie/${movie._id}`}>
                 Review
               </Link>
             </button>

@@ -1,12 +1,31 @@
 import React from "react";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./SingleMovie.css";
 import Reviews from "../../components/Reviews/Reviews";
 import Footer from "../../components/Footer/Footer";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
 
 const SingleMovie = () => {
+  const { id } = useParams();
+  const [movie, setMovie] = useState("");
+  const { userInfo } = useSelector((state) => state.auth);
   const [isShown, setIsShown] = useState(false);
+
+  useEffect(() => {
+    const fetchMovieData = async () => {
+      try {
+        const res = await axios.get(`/api/movies/${id}`);
+        setMovie(res.data);
+      } catch (error) {
+        console.error("Error getting movie data", error);
+      }
+    };
+    fetchMovieData();
+  }, [id]);
+
   const handleClick = (event) => {
     setIsShown((current) => !current);
   };
@@ -15,16 +34,13 @@ const SingleMovie = () => {
       <div className="single-movie-card">
         <div className="single-movie-container">
           <div class="product-details">
-            <h1>MOVIE NAME</h1>
+            <h1>{movie.name}</h1>
             <span class="hint-star star">
-              4<i class="fa fa-star" aria-hidden="true"></i>
+              {movie.rating}
+              <i class="fa fa-star" aria-hidden="true"></i>
             </span>
 
-            <p class="movie-desc">
-              " Let's spread the joy , here is Christmas , the most awaited day
-              of the year.Christmas Tree is what one need the most. Here is the
-              correct tree which will enhance your Christmas.
-            </p>
+            <p class="movie-desc">{movie.description}</p>
 
             <div class="control">
               <button class="btn" onClick={handleClick}>
@@ -40,15 +56,12 @@ const SingleMovie = () => {
           </div>
 
           <div class="movie-image">
-            <img
-              src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80"
-              alt=""
-            />
+            <img src={movie.image_url} alt="" />
           </div>
         </div>
       </div>
       {isShown && <ReviewForm />}
-      <Reviews />
+      <Reviews reviews={movie.reviews} />
       <Footer />
     </>
   );
