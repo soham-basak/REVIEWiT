@@ -1,24 +1,51 @@
 import React from "react";
 import "./ReviewForm.css";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
-const ReviewForm = () => {
+const ReviewForm = ({ movieId, onReviewSubmit }) => {
+  const { userInfo } = useSelector((state) => state.auth);
+  const [reviewText, setReviewText] = useState("");
+  const [rating, setRating] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`/api/movies/${movieId}/review`, {
+        user: userInfo.name,
+        reviewText: reviewText,
+        rating: rating,
+      });
+      setReviewText("");
+      setRating("");
+      onReviewSubmit(res.data);
+    } catch (error) {
+      console.error("Error creating review", error);
+    }
+  };
+
   return (
     <div>
       <div className="review-form-container">
         <div className="container__item">
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <input
-              type="email"
+              type="number"
               className="form__field__one"
               placeholder="Rating"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
             />
             <input
-              type="email"
+              type="text"
               className="form__field"
               placeholder="Write Your Review"
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
             />
             <button
-              type="button"
+              type="submit"
               className="btn btn--primary btn--inside uppercase"
             >
               POST

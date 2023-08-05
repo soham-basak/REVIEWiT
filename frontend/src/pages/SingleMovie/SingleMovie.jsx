@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./SingleMovie.css";
 import Reviews from "../../components/Reviews/Reviews";
@@ -13,18 +13,26 @@ const SingleMovie = () => {
   const [movie, setMovie] = useState("");
   const { userInfo } = useSelector((state) => state.auth);
   const [isShown, setIsShown] = useState(false);
+  const [reviews, setReviews] = useState([]);
+  const [submittingReview, setSubmittingReview] = useState(false);
 
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
         const res = await axios.get(`/api/movies/${id}`);
         setMovie(res.data);
+        setReviews(res.data.reviews || []);
       } catch (error) {
         console.error("Error getting movie data", error);
       }
     };
     fetchMovieData();
-  }, [id]);
+  }, [id, submittingReview]);
+
+  const handleNewReview = (newReview) => {
+    setReviews([...reviews, newReview]);
+    setSubmittingReview(true);
+  };
 
   const handleClick = (event) => {
     setIsShown((current) => !current);
@@ -42,17 +50,35 @@ const SingleMovie = () => {
 
             <p class="movie-desc">{movie.description}</p>
 
-            <div class="control">
-              <button class="btn" onClick={handleClick}>
-                <span class="price">
-                  <i class="fa fa-film"></i>
-                </span>
-                <span class="shopping-cart">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </span>
-                <span class="buy">REVIEW IT</span>
-              </button>
-            </div>
+            {userInfo ? (
+              <div class="control">
+                <button class="btn" onClick={handleClick}>
+                  <span class="price">
+                    <i class="fa fa-film"></i>
+                  </span>
+                  <span class="shopping-cart">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </span>
+                  <span class="buy">REVIEW IT</span>
+                </button>
+              </div>
+            ) : (
+              <div class="control">
+                <button class="btn">
+                  <span class="price">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                  <span class="shopping-cart">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </span>
+                  <span class="buy">
+                    <Link className="link" to="/login">
+                      LOGIN
+                    </Link>
+                  </span>
+                </button>
+              </div>
+            )}
           </div>
 
           <div class="movie-image">
@@ -60,7 +86,12 @@ const SingleMovie = () => {
           </div>
         </div>
       </div>
-      {isShown && <ReviewForm />}
+      {isShown && (
+        <ReviewForm
+          movieId={id}
+          onReviewSubmit={(newReview) => handleNewReview(newReview)}
+        />
+      )}
       <Reviews reviews={movie.reviews} />
       <Footer />
     </>

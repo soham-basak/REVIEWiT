@@ -1,39 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
 
-.register-hero{
-    margin-top: 130px;
-    display: flex;
-    align-items: center;
-}
-
-.register-hero-text{
-    position: absolute;
-    z-index: 1;
-    align-items: center;
-    justify-content: center;
-    left: 52%;
-    font-size: 40px;
-    font-family: 'Philosopher', sans-serif;
-    font-weight: 400;
-    
-}
-
-.register-hero-text h2, .register-hero-text h3{
-	background-image: linear-gradient(to right, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc, #c5c5c5, #aeaeae, #989898, #707070, #4a4a4a, #272727, #000000);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;   
-    background-clip: text;
-    color: transparent;
-}
-
-.register-hero-img{
-    margin-left: 20.5%;
-    position: relative;
-    z-index: -2;
-}
-
-
 .register-form-container{
     display: flex;
     align-items: center;

@@ -7,7 +7,6 @@ import { setCredentials } from "../../slices/authSlice";
 import "./Register.css";
 import registerImg from "../../img/register-img.jpg";
 import Footer from "../../components/Footer/Footer";
-import loginHeroImg from "../../img/login-page-banner.jpg";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -44,15 +43,6 @@ const Register = () => {
 
   return (
     <>
-      <div className="register-hero">
-        <div className="register-hero-img">
-          <img src={loginHeroImg} alt="" />
-        </div>
-        <div className="register-hero-text">
-          <h2>Lights</h2> <h2> Camera. Register. </h2>
-          <h3>Join the world of movies!</h3>
-        </div>
-      </div>
       <div className="register-form-container">
         <div className="register-picture">
           <img src={registerImg} alt="register-img" />

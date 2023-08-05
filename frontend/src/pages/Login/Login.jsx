@@ -8,7 +8,6 @@ import { setCredentials } from "../../slices/authSlice";
 import { toast } from "react-toastify";
 import loginImg from "../../img/login-img.jpg";
 import Footer from "../../components/Footer/Footer";
-import loginHeroImg from "../../img/login-page-banner.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -38,15 +37,6 @@ const Login = () => {
 
   return (
     <>
-      <div className="login-hero">
-        <div className="login-hero-img">
-          <img src={loginHeroImg} alt="" />
-        </div>
-        <div className="login-hero-text">
-          <h2>Lights</h2> <h2> Camera. Login. </h2>
-          <h3>Enter the world of movies!</h3>
-        </div>
-      </div>
       <div className="login-form-container">
         <div className="login-picture">
           <img src={loginImg} alt="login-img" />
