@@ -1,11 +1,14 @@
 import React from "react";
 import Movie from "../Movie/Movie";
+import "./Movies.css";
 
-const Movies = () => {
+const Movies = ({ movies }) => {
   return (
     <>
       <div className="movie-container">
-        <Movie />
+        {movies.map((movie) => (
+          <Movie key={movie._id} movie={movie} />
+        ))}
       </div>
     </>
   );
