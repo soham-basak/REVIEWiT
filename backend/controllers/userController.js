@@ -14,7 +14,8 @@ const registerUser = asyncHandler(async (req, res) => {
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(404).json({ message: "Already registered" });
+    res.status(404);
+    throw new Error("User already exists");
   }
 
   // craeting the user
@@ -48,7 +49,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
-  if (user && user.matchPassword(password)) {
+  if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id);
     res.status(200).json({
       _id: user._id,
