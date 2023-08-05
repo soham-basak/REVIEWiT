@@ -3,7 +3,7 @@ import "./Login.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoginMutation } from "../../slices/userSlice";
+import { useLoginMutation } from "../../slices/userApiSlice";
 import { setCredentials } from "../../slices/authSlice";
 import { toast } from "react-toastify";
 import loginImg from "../../img/login-img.jpg";
@@ -61,6 +61,7 @@ const Login = () => {
                     type="text"
                     className="login__input"
                     placeholder="Email"
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -70,6 +71,7 @@ const Login = () => {
                     type="password"
                     className="login__input"
                     placeholder="Password"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>

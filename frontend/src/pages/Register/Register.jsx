@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useRegisterMutation } from "../../slices/userSlice";
+import { useRegisterMutation } from "../../slices/userApiSlice";
 import { setCredentials } from "../../slices/authSlice";
 import "./Register.css";
 import registerImg from "../../img/register-img.jpg";
@@ -67,6 +67,7 @@ const Register = () => {
                     type="text"
                     className="register__input"
                     placeholder="Name"
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -76,6 +77,7 @@ const Register = () => {
                     type="email"
                     className="register__input"
                     placeholder="Email"
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -85,6 +87,7 @@ const Register = () => {
                     type="password"
                     className="register__input"
                     placeholder="Password"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
@@ -94,6 +97,7 @@ const Register = () => {
                     type="password"
                     className="register__input"
                     placeholder="Confirm Password"
+                    value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
