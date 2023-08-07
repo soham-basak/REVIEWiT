@@ -10,7 +10,7 @@ const getMovies = asyncHandler(async (req, res) => {
     const movies = await Movie.find();
     res.status(200).json(movies);
   } catch (error) {
-    req.status(404);
+    res.status(404);
     throw new Error("Server error : " + error.message);
   }
 });
@@ -24,7 +24,7 @@ const getOneMovie = asyncHandler(async (req, res) => {
     const movie = await Movie.findById(req.params.id).populate("reviews");
     res.status(200).json(movie);
   } catch (error) {
-    req.status(404);
+    res.status(404);
     throw new Error("Server error : " + error.message);
   }
 });

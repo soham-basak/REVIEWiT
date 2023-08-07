@@ -1,22 +1,25 @@
 import React from "react";
 import "./ReviewForm.css";
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { usePostReviewMutation } from "../../slices/movieApiSlice";
 
 const ReviewForm = ({ movieId, onReviewSubmit }) => {
   const { userInfo } = useSelector((state) => state.auth);
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState("");
+  const [postReview] = usePostReviewMutation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`/api/movies/${movieId}/review`, {
+      const reviewData = {
         user: userInfo.name,
         reviewText: reviewText,
         rating: rating,
-      });
+      };
+
+      const res = await postReview({ id: movieId, data: reviewData }).unwrap();
       setReviewText("");
       setRating("");
       onReviewSubmit(res.data);

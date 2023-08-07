@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,6 +6,7 @@ import "./SingleMovie.css";
 import Reviews from "../../components/Reviews/Reviews";
 import Footer from "../../components/Footer/Footer";
 import ReviewForm from "../../components/ReviewForm/ReviewForm";
+import { useGetOneMovieMutation } from "../../slices/movieApiSlice";
 
 const SingleMovie = () => {
   const { id } = useParams();
@@ -15,11 +15,12 @@ const SingleMovie = () => {
   const [isShown, setIsShown] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [submittingReview, setSubmittingReview] = useState(false);
+  const [getOneMovie] = useGetOneMovieMutation();
 
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
-        const res = await axios.get(`/api/movies/${id}`);
+        const res = await getOneMovie({ id: id });
         setMovie(res.data);
         setReviews(res.data.reviews || []);
       } catch (error) {
@@ -27,7 +28,7 @@ const SingleMovie = () => {
       }
     };
     fetchMovieData();
-  }, [id, submittingReview]);
+  }, [getOneMovie, id, submittingReview]);
 
   const handleNewReview = (newReview) => {
     setReviews([...reviews, newReview]);
