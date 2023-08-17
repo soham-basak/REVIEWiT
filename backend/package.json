@@ -5,7 +5,7 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "server.js",
+    "start": "npm i && cd .. && cd frontend && npm run build && cd.. && cd backend && node server.js",
     "dev": "nodemon server.js"
   },
   "author": "dexter",
