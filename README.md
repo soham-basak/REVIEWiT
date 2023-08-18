@@ -17,6 +17,10 @@ REVIEWiT is a web application built using the MERN (MongoDB, Express.js, React.j
 
 ![Screenshot 3](banners/banner3.png)
 
+## Demo
+
+Check out the live demo of REVIEWiT: [Demo Link](https://reviewitbydex.netlify.app/)
+
 ## Getting Started
 
 ### Prerequisites
