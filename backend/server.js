@@ -1,4 +1,3 @@
-import * as path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -7,11 +6,7 @@ import cors from "cors";
 import movieRoutes from "./routes/movieRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import { fileURLToPath } from "url";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 dotenv.config();
 connectDB();
@@ -30,19 +25,9 @@ app.use("/api/movies", movieRoutes);
 app.use("/api/movies", reviewRoutes);
 app.use("/api/users", userRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "../", "frontend", "build", "index.html")
-    );
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("Currently in dev mode");
-  });
-}
+app.get("/", (req, res) => {
+  res.send("Currently in dev mode");
+});
 
 app.use(notFound);
 app.use(errorHandler);
