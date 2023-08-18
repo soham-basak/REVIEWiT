@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "cd backend && npm start"
+    "start" : "cd backend && npm install"
   },
   "author": "dexter",
   "license": "ISC"
